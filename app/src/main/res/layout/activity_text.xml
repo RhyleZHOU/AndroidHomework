@@ -4,6 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemoActivity">
+    tools:context=".TextActivity">
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="123"
+        android:textSize="30sp"
+        android:textColor="#fff032"
+        android:gravity="center"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
