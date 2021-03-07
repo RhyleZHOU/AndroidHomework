@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="duration_hint">动画时长，单位毫秒，范围在 100 ~ 10000</string>
+    <string name="invalid_duration">时长设置不合理，请输入范围在 100 ~ 10000 的值</string>
+    <string name="rainbow_text">IIIII彩II虹II字II体IIIIII</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

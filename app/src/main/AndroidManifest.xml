@@ -9,10 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".search.SearchActivity">
-
-        </activity>
-        <activity android:name=".TextActivity" />
+        <activity android:name=".animation.AFragment"></activity>
+        <activity android:name=".animation.MainActivity2" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".TextActivity" />
+        <activity
+            android:name=".animation.Ch3Ex1Activity"
+            android:label="ch3ex1" />
+        <activity
+            android:name=".animation.Ch3Ex2Activity"
+            android:label="ch3ex2" />
+        <activity
+            android:name=".animation.Ch3Ex3Activity"
+            android:label="ch3ex3" />
     </application>
 
 </manifest>
