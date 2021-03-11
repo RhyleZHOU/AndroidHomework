@@ -2,12 +2,19 @@ package com.example.myapplication.animation;
 
 import android.os.Bundle;
 import com.example.myapplication.R;
+import com.example.myapplication.search.SearchAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * 使用 ViewPager 和 Fragment 做一个简单版的好友列表界面
@@ -17,10 +24,13 @@ import androidx.viewpager.widget.ViewPager;
  */
 public class Ch3Ex3Activity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ch3ex3);
+
+
 
         // TODO: ex3-1. 添加 ViewPager 和 Fragment 做可滑动界面
         // TODO: ex3-2, 添加 TabLayout 支持 Tab
