@@ -1,4 +1,6 @@
 package com.example.myapplication;
+import com.example.myapplication.clock.MainActivity3;
+import com.example.myapplication.clock.SplashActivity;
 import com.example.myapplication.search.SearchActivity;
 import com.example.myapplication.animation.MainActivity2;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mButton1;
     private Button mButton2;
+    private Button mButton3;
     //private SearchAdapter mSearchAdapter = new SearchAdapter();
 
     @Override
@@ -39,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+        mButton3 = findViewById(R.id.btn_w3);
+        mButton3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SplashActivity.class);
                 startActivity(intent);
             }
         });
