@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +37,11 @@
             android:label="ch3ex3" />
         <activity android:name=".clock.SplashActivity" />
         <activity android:name=".clock.ClockActivity" />
+
+        <activity android:name=".internet.MainActivity4" />
+        <activity android:name=".internet.UploadActivity" />
+        <activity android:name=".internet.socket.SocketActivity" />
+
     </application>
 
 </manifest>
