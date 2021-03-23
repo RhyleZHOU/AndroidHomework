@@ -18,12 +18,14 @@ import com.example.myapplication.internet.model.Message;
 import com.example.myapplication.internet.model.UploadResponse;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -130,14 +132,32 @@ public class UploadActivity extends AppCompatActivity {
         //TODO 5
         // 使用api.submitMessage()方法提交留言
         // 如果提交成功则关闭activity，否则弹出toast
-        Call<UploadResponse> call = api.submitMessage(
-                Constants.STUDENT_ID,
-                extraValue,
-                MultipartBody.Part.createFormData("from",Constants.USER_NAME),
-                MultipartBody.Part.createFormData("to",to),
-                MultipartBody.Part.createFormData("content",content),
-                MultipartBody.Part.createFormData("image",null, RequestBody.create(null,coverImageData)),
-                Constants.token);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Call<UploadResponse> call = api.submitMessage(
+                        Constants.STUDENT_ID,
+                        extraValue,
+                        MultipartBody.Part.createFormData("from",Constants.USER_NAME),
+                        MultipartBody.Part.createFormData("to",to),
+                        MultipartBody.Part.createFormData("content",content),
+                        MultipartBody.Part.createFormData("image",null, RequestBody.create(null,coverImageData)),
+                        Constants.token);
+                try {
+                    Response<UploadResponse> response = call.execute();
+                    if (response.isSuccessful()){
+//                        Toast.makeText(getApplicationContext(),"上传成功",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),"上传失败",Toast.LENGTH_LONG).show();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
 
     }
 
