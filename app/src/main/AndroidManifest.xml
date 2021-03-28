@@ -12,7 +12,8 @@
         android:label="阿慧的Android作业"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication">
+        android:theme="@style/Theme.MyApplication"
+        >
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -43,7 +44,13 @@
             android:screenOrientation="portrait" />
         <activity android:name=".internet.socket.SocketActivity"
             android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".todolist.MainActivity5"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+        </activity>
+        <activity android:name=".todolist.debug.DebugActivity" />
+        <activity android:name=".todolist.NoteActivity" />
     </application>
 
 </manifest>

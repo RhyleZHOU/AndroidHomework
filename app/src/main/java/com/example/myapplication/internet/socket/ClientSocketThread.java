@@ -46,22 +46,16 @@ public class ClientSocketThread extends Thread {
             byte[] data = new byte[1024 * 5];//每次读取的字节数
             int len = -1;
             while (!stopFlag && socket.isConnected()) {
-                if (!message.isEmpty()) {
-                    Log.d("socket", "客户端发送 " + message);
-                    os.write(message.getBytes());
+                if (!content.isEmpty()) {
+                    Log.d("socket", "客户端发送 " + content);
+                    os.write(content.getBytes());
                     os.flush();
                     clearMsg();
                     int reciveLen = is.read(data);
                     if (reciveLen!=-1){
                         String receive = new String(data, 0, reciveLen);
                         Log.d("socket", "客户端收到 " + receive);
-                        activity.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(activity, receive, Toast.LENGTH_SHORT).show();
-                                callback.onResponse(receive);
-                            }
-                        });
+                        callback.onResponse(receive);
                     }else {
                         Log.d("socket", "客户端收到-1");
                     }

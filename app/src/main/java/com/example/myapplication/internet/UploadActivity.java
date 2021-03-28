@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -142,7 +143,7 @@ public class UploadActivity extends AppCompatActivity {
                         MultipartBody.Part.createFormData("from",Constants.USER_NAME),
                         MultipartBody.Part.createFormData("to",to),
                         MultipartBody.Part.createFormData("content",content),
-                        MultipartBody.Part.createFormData("image",null, RequestBody.create(null,coverImageData)),
+                        MultipartBody.Part.createFormData("image","cover.png", RequestBody.create(MediaType.parse("multipart/form-data"),coverImageData)),
                         Constants.token);
                 try {
                     Response<UploadResponse> response = call.execute();

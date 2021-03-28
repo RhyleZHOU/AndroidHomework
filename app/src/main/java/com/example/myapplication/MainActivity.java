@@ -4,6 +4,7 @@ import com.example.myapplication.search.SearchActivity;
 import com.example.myapplication.animation.MainActivity2;
 import com.example.myapplication.clock.SplashActivity;
 import com.example.myapplication.internet.MainActivity4;
+import com.example.myapplication.todolist.MainActivity5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButton2;
     private Button mButton3;
     private Button mButton4;
+    private Button mButton5;
     //private SearchAdapter mSearchAdapter = new SearchAdapter();
 
     @Override
@@ -63,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                startActivity(intent);
+            }
+        });
+
+        mButton5 = findViewById(R.id.btn_w5);
+        mButton5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
                 startActivity(intent);
             }
         });
