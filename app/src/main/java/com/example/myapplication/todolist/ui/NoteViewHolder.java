@@ -27,6 +27,7 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
     private final NoteOperator operator;
 
     private CheckBox checkBox;
+    private TextView titleText;
     private TextView contentText;
     private TextView dateText;
     private View deleteBtn;
@@ -36,6 +37,7 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
         this.operator = operator;
 
         checkBox = itemView.findViewById(R.id.checkbox);
+        titleText = itemView.findViewById(R.id.text_todo_title);
         contentText = itemView.findViewById(R.id.text_content);
         dateText = itemView.findViewById(R.id.text_date);
         deleteBtn = itemView.findViewById(R.id.btn_delete);
@@ -44,7 +46,7 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
     public void bind(final Note note) {
         contentText.setText(note.getContent());
         dateText.setText(SIMPLE_DATE_FORMAT.format(note.getDate()));
-
+        titleText.setText("Todo" + Long.toString(note.id));
         checkBox.setOnCheckedChangeListener(null);
         checkBox.setChecked(note.getState() == State.DONE);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

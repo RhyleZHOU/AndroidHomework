@@ -29,6 +29,7 @@ public class NoteActivity extends AppCompatActivity {
     private EditText editText;
     private Button addBtn;
     private RadioGroup radioGroup;
+
     private AppCompatRadioButton lowRadio;
 
     private TodoDbHelper dbHelper;
