@@ -18,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.todolist.beans.Note;
 import com.example.myapplication.todolist.beans.Priority;
@@ -81,7 +83,20 @@ public class MainActivity5 extends AppCompatActivity {
         });
         recyclerView.setAdapter(notesAdapter);
 
+
+        notesAdapter.setOnItemListenerListener(new NoteListAdapter.OnItemListener() {
+            @Override
+            public void OnItemLongClickListener(View view) {
+
+                Intent i = new Intent(MainActivity5.this, NoteActivity.class);
+                TextView tv = view.findViewById(R.id.text_content);
+                i.putExtra("content",tv.getText().toString());
+
+                startActivityForResult(i,REQUEST_CODE_ADD);
+            }
+        });
         notesAdapter.refresh(loadNotesFromDatabase());
+
     }
 
     @Override

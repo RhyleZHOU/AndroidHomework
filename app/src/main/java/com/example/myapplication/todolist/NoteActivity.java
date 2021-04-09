@@ -3,6 +3,7 @@ package com.example.myapplication.todolist;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,6 +82,10 @@ public class NoteActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Intent i=getIntent();
+        editText.setText(i.getStringExtra("content"));
+
     }
 
     @Override

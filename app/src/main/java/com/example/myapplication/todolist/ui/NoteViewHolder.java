@@ -73,4 +73,5 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
 
         itemView.setBackgroundColor(note.getPriority().color);
     }
+
 }
