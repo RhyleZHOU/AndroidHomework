@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import com.example.myapplication.media.MainActivity6;
 import com.example.myapplication.search.SearchActivity;
 import com.example.myapplication.animation.MainActivity2;
 import com.example.myapplication.clock.SplashActivity;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButton3;
     private Button mButton4;
     private Button mButton5;
+    private Button mButton6;
     //private SearchAdapter mSearchAdapter = new SearchAdapter();
 
     @Override
@@ -74,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity5.class);
+                startActivity(intent);
+            }
+        });
+
+        mButton6 = findViewById(R.id.btn_w6);
+        mButton6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity6.class);
                 startActivity(intent);
             }
         });

@@ -53,4 +53,6 @@ dependencies {
     implementation 'com.facebook.fresco:animated-webp:2.4.0'
     implementation 'com.facebook.fresco:webpsupport:2.4.0'
 
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
 }

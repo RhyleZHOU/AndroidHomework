@@ -51,6 +51,14 @@
         </activity>
         <activity android:name=".todolist.debug.DebugActivity" />
         <activity android:name=".todolist.NoteActivity" />
+
+        <activity android:name=".media.MainActivity6" />
+        <activity android:name=".media.CanvasActivity" />
+        <activity android:name=".media.FrescoImageActivity" />
+        <activity android:name=".media.GlideActivity" />
+        <activity android:name=".media.ImageActivity" />
+        <activity android:name=".media.PermissionActivity" />
+        <activity android:name=".media.VideoActivity" />
     </application>
 
 </manifest>
